@@ -44,7 +44,7 @@ Then open http://localhost:3000.
 
 - Repository: https://github.com/lmaomaidah/habit-tracker
 - Video: _add Google Drive or YouTube link_
-- Vercel: _add link if claiming the bonus_
+- Vercel: https://habit-tracker-rho-teal.vercel.app
 
 ## AI tools used
 
