@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Habit Tracker
 
-## Getting Started
+**Group:** G__ · **Topic:** 42 — Habit tracker
 
-First, run the development server:
+| Name | Roll number |
+|------|-------------|
+| Maidah Bint E Junaid | 24I-2116 |
+| Alisha Javed | 24I-2063 |
+| Umm e Hani | 24I-2113 |
+
+## About
+
+Habit Tracker lets you browse a list of daily habits, search and filter them by category, and open each one to see its goal and streak. On the Today page you tick off the habits you did, which adds a day to their streak. It is frontend only; all data is mock data in `data/habits.ts`.
+
+## How to run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Shows |
+|-------|-------|
+| `/` | Home page with links and the three longest streaks |
+| `/habits` | All 15 habits with search by name and category filter |
+| `/habits/[id]` | One habit's details (unknown id shows the 404 page) |
+| `/habits/new` | Form to add a habit, with validation errors |
+| `/today` | Daily check-off list with streak counts |
+| `/about` | What the app is and how to use it |
 
-## Learn More
+## Contribution
 
-To learn more about Next.js, take a look at the following resources:
+| Member | Pages | Components |
+|--------|-------|------------|
+| Maidah Bint E Junaid | `layout.tsx`, `/`, `/about`, `not-found.tsx` | Navbar, Footer, PageHeader, Button |
+| Alisha Javed | `/habits`, `/habits/[id]`, `loading.tsx`, `data/habits.ts` | HabitList, HabitCard, SearchBar, Select, Badge |
+| Umm e Hani | `/habits/new`, `/today` | HabitForm, FormField, TodayList |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Repository: https://github.com/lmaomaidah/habit-tracker
+- Video: _add Google Drive or YouTube link_
+- Vercel: _add link if claiming the bonus_
 
-## Deploy on Vercel
+## AI tools used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Claude Code: project setup, code for the pages and components, UI styling, mock data, README and Git help
