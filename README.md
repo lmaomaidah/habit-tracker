@@ -1,6 +1,6 @@
 # Habit Tracker
 
-**Group:** G__ · **Topic:** 42 — Habit tracker
+**Group:** G17 · **Topic:** 42 — Habit tracker
 
 | Name | Roll number |
 |------|-------------|
@@ -43,7 +43,6 @@ Then open http://localhost:3000.
 ## Links
 
 - Repository: https://github.com/lmaomaidah/habit-tracker
-- Video: _add Google Drive or YouTube link_
 - Vercel: https://habit-tracker-rho-teal.vercel.app
 
 ## AI tools used
