@@ -11,7 +11,7 @@ export default function HabitCard({ habit }: HabitCardProps) {
   return (
     <Link
       href={`/habits/${habit.id}`}
-      className={`${categoryColors[habit.category]} flex flex-col justify-between gap-8 rounded-3xl p-5 text-white motion-safe:transition-transform motion-safe:hover:-rotate-1`}
+      className={`${categoryColors[habit.category]} flex flex-col justify-between gap-8 rounded-3xl p-5 text-white outline-offset-4 focus-visible:outline-4 focus-visible:outline-ink motion-safe:transition-transform motion-safe:hover:-rotate-1`}
     >
       <div className="flex items-start justify-between gap-3">
         <div>
