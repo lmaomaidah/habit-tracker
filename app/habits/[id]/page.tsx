@@ -10,6 +10,13 @@ export function generateStaticParams() {
   return habits.map((habit) => ({ id: habit.id }));
 }
 
+// "7" reads better as "every day", and 1 should not say "1 times"
+function goalText(timesPerWeek: number): string {
+  if (timesPerWeek === 7) return "every day";
+  if (timesPerWeek === 1) return "once a week";
+  return `${timesPerWeek} times a week`;
+}
+
 export async function generateMetadata({ params }: PageProps<"/habits/[id]">): Promise<Metadata> {
   const { id } = await params;
   const habit = getHabit(id);
@@ -41,7 +48,7 @@ export default async function HabitDetailPage({ params }: PageProps<"/habits/[id
         </p>
       </div>
       <p className="mb-2 text-lg">{habit.description}</p>
-      <p className="mb-8 text-lg text-ink/70">Goal: {habit.timesPerWeek} times a week</p>
+      <p className="mb-8 text-lg text-ink/70">Goal: {goalText(habit.timesPerWeek)}</p>
       <Button href="/habits">Back to habits</Button>
     </div>
   );
