@@ -35,3 +35,8 @@ export const habits: Habit[] = [
   { id: "14", name: "Write a journal entry", category: "Mind", description: "Three lines about how the day went.", timesPerWeek: 7, streak: 0 },
   { id: "15", name: "No phone for the first hour", category: "Mind", description: "Start the morning without social media.", timesPerWeek: 7, streak: 3 },
 ];
+
+// find one habit by its id (undefined if there is no such habit)
+export function getHabit(id: string): Habit | undefined {
+  return habits.find((habit) => habit.id === id);
+}

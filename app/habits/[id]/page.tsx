@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { categoryColors, habits } from "@/data/habits";
+import { categoryColors, getHabit, habits } from "@/data/habits";
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 
@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/habits/[id]">): Promise<Metadata> {
   const { id } = await params;
-  const habit = habits.find((h) => h.id === id);
+  const habit = getHabit(id);
   return {
     title: habit ? habit.name : "Habit not found",
     description: habit ? habit.description : "This habit does not exist.",
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps<"/habits/[id]">): P
 
 export default async function HabitDetailPage({ params }: PageProps<"/habits/[id]">) {
   const { id } = await params;
-  const habit = habits.find((h) => h.id === id);
+  const habit = getHabit(id);
 
   if (!habit) notFound(); // unknown id shows app/not-found.tsx
 
