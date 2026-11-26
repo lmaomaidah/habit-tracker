@@ -33,7 +33,21 @@ export default function HabitList({ habits }: HabitListProps) {
         Showing {shown.length} of {habits.length} habits
       </p>
 
-      {shown.length === 0 && <p className="text-ink/70">No habits match your search.</p>}
+      {shown.length === 0 && (
+        <p className="mb-6 text-ink/70">
+          No habits match your search.{" "}
+          <button
+            type="button"
+            onClick={() => {
+              setSearch("");
+              setCategory("");
+            }}
+            className="font-semibold text-ink underline hover:no-underline"
+          >
+            Clear filters
+          </button>
+        </p>
+      )}
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((habit) => (
